@@ -3,13 +3,15 @@
 \name{fars_read}
 \alias{fars_read}
 \title{fars_read function
-read a csv file given a route to the file.}
+read a csv file given a route to the file.
+ @param filename an string indicating the complete route or relative route (from the working directory) to the file. The file can be compressed.
+ @return  a table_df that contents the data of csv. If the file doesn?t exist returns an error.}
 \usage{
 fars_read(filename)
 }
 \description{
-@param filename an string indicating the complete route or relative route (from the working directory) to the file. The file can be compressed.
-}
-\details{
-@return  a table_df that contents the data of csv. If the file doesn?t exist returns an error.
+fars_read function
+read a csv file given a route to the file.
+ @param filename an string indicating the complete route or relative route (from the working directory) to the file. The file can be compressed.
+ @return  a table_df that contents the data of csv. If the file doesn?t exist returns an error.
 }
