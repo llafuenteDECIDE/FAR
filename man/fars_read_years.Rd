@@ -24,6 +24,5 @@ given a list of years,  extracts for each  year the MONTH column
 }
 \examples{
 fars_read_years(c(2013, 2014))
- @importFrom dplyr mutate, select
  @export
 }

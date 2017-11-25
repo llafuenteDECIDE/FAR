@@ -1,18 +1,19 @@
 #' fars_read function
 #' read a csv file given a route to the file.
-
+#'
 #'  @param filename an string indicating the complete route or relative route (from the working directory) to the file. The file can be compressed.
 
 #'  @return  a table_df that contents the data of csv. If the file doesn?t exist returns an error.
+#'
+#' @importFrom readr read_csv
+#' @importFrom dplyr tbl_df
 
 #'  @examples
 #'   fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
 #'   fars_read (/data/accident_2014.csv.bz2) supposing accident_2014.csv.bz2 in a data folder inside the working directory
 
-#'  @importFrom readr read_csv
-#'  @importFrom dplyr tbl_df
-
 #'  @export
+
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
@@ -51,12 +52,16 @@ make_filename <- function(year) {
 #' includes the MONTH column of the accident data of the year and a column with the year.
 #' If there is no data of the year the element of the list will be null.
 
+
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
+#' @importFrom magrittr "%>%"
+
 #' @examples
 #' fars_read_years(c(2013, 2014))
 
-#'  @importFrom dplyr mutate, select
-
 #'  @export
+
 fars_read_years <- function(years) {
   lapply(years, function(year) {
     file <- make_filename(year)
@@ -81,10 +86,15 @@ fars_read_years <- function(years) {
 
 #' @examples fars_summarize_years(c(2013, 2014, 2015))
 
-#'@importFrom dplyr group_by, summarize
-#'@importFrom tidyr spread
+#' @importFrom dplyr bind_rows
+#' @importFrom dplyr group_by
+#' @importFrom dplyr summarize
+#' @importFrom tidyr spread
+#' @importFrom dplyr n
+
 
 #'  @export
+
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
@@ -112,6 +122,7 @@ fars_summarize_years <- function(years) {
 #'@examples fars_map_state(1,2013)
 
 #'  @export
+
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)
