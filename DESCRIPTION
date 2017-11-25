@@ -4,7 +4,7 @@ Date: 2017-11-23
 Depends: R (>= 3.0.0)
 Imports: readr, dplyr, tidyr
 Title: Accidents data and analysis tool
-Author: Luc?a Lafuente <llafuente@decidesoluciones.es>
+Author: Lucia Lafuente <llafuente@decidesoluciones.es>
 Maintainer: Lucia Lafuente <llafuente@decidesoluciones.es>
 Description: accident's data with some functions for analysis
 License: GPL (>= 2)
