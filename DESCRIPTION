@@ -1,8 +1,8 @@
 Package: Far
 Version: 1.0-3
 Date: 2017-11-23
-Depends: R (>= 3.0.0)
-Imports: readr, dplyr, tidyr
+Depends: R (>= 3.0.0),
+Imports: dplyr, maps, readr, tidyr
 Title: Accidents data and analysis tool
 Author: Lucia Lafuente <llafuente@decidesoluciones.es>
 Maintainer: Lucia Lafuente <llafuente@decidesoluciones.es>
