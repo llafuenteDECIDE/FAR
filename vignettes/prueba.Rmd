@@ -1,0 +1,21 @@
+---
+title: "Far functions"
+author: "Lucia Lafuente"
+date: "25-Nov-2017"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This package is a tool for analyzing data from accidents that happens on years 2013, 2014 or 2015. It gives an easy way to know the situation of the accidents of one of this years for each state of the USA.
+
+The two main functions in the far package are `far_maps_state` which drows the coordinates of all accidents for a determined year and state, and ``fars_summarize_years`which indicates the number of accidents by month for a determined year.
