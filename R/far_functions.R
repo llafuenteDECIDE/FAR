@@ -5,8 +5,8 @@
 
 #'  @return  a table_df that contents the data of csv. If the file doesn?t exist returns an error.
 #'
-#' @importFrom readr read_csv
-#' @importFrom dplyr tbl_df
+#'  @importFrom readr read_csv
+#'  @importFrom dplyr tbl_df
 
 #'  @examples
 #'   fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
@@ -60,7 +60,7 @@ make_filename <- function(year) {
 #' @examples
 #' fars_read_years(c(2013, 2014))
 
-#'  @export
+#'@export
 
 fars_read_years <- function(years) {
   lapply(years, function(year) {
