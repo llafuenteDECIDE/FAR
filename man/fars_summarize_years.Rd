@@ -19,6 +19,8 @@ fars_summarize_years function
 given a list of years gives the number of accidents by month of each of the years
 }
 \examples{
+\dontrun{
 fars_summarize_years(c(2013, 2014, 2015))
+}
 
 }

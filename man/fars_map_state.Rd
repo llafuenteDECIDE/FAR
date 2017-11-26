@@ -21,6 +21,7 @@ given an state and a year plots the coordenates of the accidents in
 this state an year
 }
 \examples{
-fars_map_state(1,2013)
-
+\dontrun{
+ fars_map_state(1,2013)
+}
 }
