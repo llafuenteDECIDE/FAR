@@ -2,9 +2,7 @@
 % Please edit documentation in R/far_functions.R
 \name{fars_map_state}
 \alias{fars_map_state}
-\title{fars_map_state function
-given an state and a year plots the coordenates of the accidents in
-this state an year}
+\title{fars_map_state function}
 \usage{
 fars_map_state(state.num, year)
 }
@@ -19,12 +17,10 @@ a plot with all accident's coordinates drawed of the /code{state.num}
 and /code{year} or null if the /code{state.num} does not exist
 }
 \description{
-fars_map_state function
 given an state and a year plots the coordenates of the accidents in
 this state an year
 }
 \examples{
-\dontrun{
 fars_map_state(1,2013)
-}
+
 }

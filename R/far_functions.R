@@ -1,21 +1,17 @@
 #' fars_read function
 #' read a csv file given a route to the file.
-
+#'
 #'  @param filename an string indicating the complete route or relative route (from the working directory) to the file. The file can be compressed.
-
+#'
 #'  @return  a table_df that contents the data of csv. If the file doesn?t exist returns an error.
 #'
 #'  @importFrom readr read_csv
 #'  @importFrom dplyr tbl_df
-
+#'
 #'  @examples
+#' fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
+#' fars_read (/data/accident_2014.csv.bz2) supposing accident_2014.csv.bz2 in a data folder inside the working directory
 #'
-#' \dontrun{
-#'
-#'   fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
-#'   fars_read (/data/accident_2014.csv.bz2) supposing accident_2014.csv.bz2 in a data folder inside the working directory
-#' }
-
 #'  @export
 fars_read <- function(filename) {
   if(!file.exists(filename))
@@ -35,7 +31,7 @@ fars_read <- function(filename) {
 #'  @return  an string that represents the complete name of the filename.
 
 #'  @examples
-#' \dontrun{
+#' {
 #'  make_filename(2013)   returns accident_2013.csv.bz2
 #'  make_filename(2014)   returns accident_2014.csv.bz2
 #' }
@@ -55,17 +51,14 @@ make_filename <- function(year) {
 #' Each element of the list refers to a year of the list and si a dataframe that
 #' includes the MONTH column of the accident data of the year and a column with the year.
 #' If there is no data of the year the element of the list will be null.
-
-
+#'
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
 #' @importFrom magrittr "%>%"
-
+#'
 #' @examples
-#' \dontrun{
 #' fars_read_years(c(2013, 2014))
-#' }
-
+#'
 #' @export
 fars_read_years <- function(years) {
   lapply(years, function(year) {
@@ -83,14 +76,13 @@ fars_read_years <- function(years) {
 
 #' fars_summarize_years function
 #' given a list of years gives the number of accidents by month of each of the years
-
+#'
 #' @param years a vector or list of ints or strings  representing years
-
+#'
 #' @return a table which variables are the years on list and an unique
 #' file that indicates the number of accidents by month of this year
-
+#'
 #' @examples
-#' \dontrun{
 #' fars_summarize_years(c(2013, 2014, 2015))
 #'
 #' @importFrom dplyr bind_rows
@@ -98,8 +90,7 @@ fars_read_years <- function(years) {
 #' @importFrom dplyr summarize
 #' @importFrom tidyr spread
 #' @importFrom dplyr n
-
-
+#'
 #' @export
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
@@ -110,26 +101,24 @@ fars_summarize_years <- function(years) {
 }
 
 #' fars_map_state function
-
+#'
 #' given an state and a year plots the coordenates of the accidents in
 #' this state an year
-
+#'
 #' @param state.num the number of the state for which we want
 #' to draw the accident's coordinates.
 #' @param year an integer indicating the year for which we want to draw the accident?s coordinates
-
+#'
 #' @return a plot with all accident's coordinates drawed of the /code{state.num}
 #' and /code{year} or null if the /code{state.num} does not exist
-
+#'
 #' @importFrom dplyr filter
 #' @importFrom maps  map
 #' @importFrom graphics points
-
+#'
 #' @examples
-#' \dontrun{
 #' fars_map_state(1,2013)
-#'}
-
+#'
 #' @export
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
