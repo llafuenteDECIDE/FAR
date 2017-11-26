@@ -21,7 +21,7 @@ make_filename function
 }
 \examples{
 \dontrun{
- make_filename(2013)   returns accident_2013.csv.bz2
- make_filename(2014)   returns accident_2014.csv.bz2
+ make_filename(2013)
+ make_filename(2014)
 }
 }

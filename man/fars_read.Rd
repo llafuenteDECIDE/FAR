@@ -18,7 +18,7 @@ fars_read function
 read a csv file given a route to the file.
 }
 \examples{
-fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
-fars_read (/data/accident_2014.csv.bz2) supposing accident_2014.csv.bz2 in a data folder inside the working directory
+fars_read (accident_2013.csv.bz2)
+fars_read (/data/accident_2014.csv.bz2)
 
 }
