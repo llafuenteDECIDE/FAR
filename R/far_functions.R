@@ -9,11 +9,14 @@
 #'  @importFrom dplyr tbl_df
 
 #'  @examples
+#'
+#' \dontrun{
+#'
 #'   fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
 #'   fars_read (/data/accident_2014.csv.bz2) supposing accident_2014.csv.bz2 in a data folder inside the working directory
+#' }
 
 #'  @export
-
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
@@ -32,9 +35,10 @@ fars_read <- function(filename) {
 #'  @return  an string that represents the complete name of the filename.
 
 #'  @examples
+#' \dontrun{
 #'  make_filename(2013)   returns accident_2013.csv.bz2
 #'  make_filename(2014)   returns accident_2014.csv.bz2
-
+#' }
 
 make_filename <- function(year) {
   year <- as.integer(year)
@@ -45,10 +49,10 @@ make_filename <- function(year) {
 #' given a list of years,  extracts for each  year the MONTH column
 #'  and a year column of the accident data of that year.
 
-#'@param years a vector or list of integers representing the years
+#' @param years a vector or list of integers representing the years
 
-#'@return a list of dataframes of the same length of /code {"year"}.
-#'Each element of the list refers to a year of the list and si a dataframe that
+#' @return a list of dataframes of the same length of /code {"year"}.
+#' Each element of the list refers to a year of the list and si a dataframe that
 #' includes the MONTH column of the accident data of the year and a column with the year.
 #' If there is no data of the year the element of the list will be null.
 
@@ -58,10 +62,11 @@ make_filename <- function(year) {
 #' @importFrom magrittr "%>%"
 
 #' @examples
+#' \dontrun{
 #' fars_read_years(c(2013, 2014))
+#' }
 
-#'@export
-
+#' @export
 fars_read_years <- function(years) {
   lapply(years, function(year) {
     file <- make_filename(year)
@@ -84,8 +89,10 @@ fars_read_years <- function(years) {
 #' @return a table which variables are the years on list and an unique
 #' file that indicates the number of accidents by month of this year
 
-#' @examples fars_summarize_years(c(2013, 2014, 2015))
-
+#' @examples
+#' \dontrun{
+#' fars_summarize_years(c(2013, 2014, 2015))
+#'
 #' @importFrom dplyr bind_rows
 #' @importFrom dplyr group_by
 #' @importFrom dplyr summarize
@@ -93,8 +100,7 @@ fars_read_years <- function(years) {
 #' @importFrom dplyr n
 
 
-#'  @export
-
+#' @export
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
@@ -119,10 +125,12 @@ fars_summarize_years <- function(years) {
 #' @importFrom maps  map
 #' @importFrom graphics points
 
-#'@examples fars_map_state(1,2013)
+#' @examples
+#' \dontrun{
+#' fars_map_state(1,2013)
+#'}
 
-#'  @export
-
+#' @export
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)

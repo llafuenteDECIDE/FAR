@@ -23,5 +23,7 @@ given a list of years,  extracts for each  year the MONTH column
  and a year column of the accident data of that year.
 }
 \examples{
+\dontrun{
 fars_read_years(c(2013, 2014))
+}
 }

@@ -13,7 +13,12 @@ fars_read(filename)
 @importFrom readr read_csv
  @importFrom dplyr tbl_df
  @examples
-  fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
+}
+\details{
+\dontrun{
+
+fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
   fars_read (/data/accident_2014.csv.bz2) supposing accident_2014.csv.bz2 in a data folder inside the working directory
+}
  @export
 }
