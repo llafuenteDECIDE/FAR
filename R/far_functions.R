@@ -9,8 +9,8 @@
 #' @importFrom dplyr tbl_df
 #'
 #' @examples
-#' fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
-#' fars_read (/data/accident_2014.csv.bz2) supposing accident_2014.csv.bz2 in a data folder inside the working directory
+#' fars_read (accident_2013.csv.bz2)
+#' fars_read (/data/accident_2014.csv.bz2)
 #'
 #' @export
 fars_read <- function(filename) {
@@ -32,8 +32,8 @@ fars_read <- function(filename) {
 #'
 #' @examples
 #' \dontrun{
-#'  make_filename(2013)   returns accident_2013.csv.bz2
-#'  make_filename(2014)   returns accident_2014.csv.bz2
+#'  make_filename(2013)
+#'  make_filename(2014)
 #' }
 
 make_filename <- function(year) {
