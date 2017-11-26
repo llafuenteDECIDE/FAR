@@ -8,13 +8,18 @@
 \usage{
 make_filename(year)
 }
-\description{
-@param year an integer or string indicating the year to which we want to obtain the filename
+\arguments{
+\item{year}{an integer or string indicating the year to which we want to obtain the filename}
 }
-\details{
-@return  an string that represents the complete name of the filename.
-
-@examples
+\value{
+an string that represents the complete name of the filename.
+}
+\description{
+make_filename function
+ given a year, makes the complete name of the "accident" filename. It has the form "accident_year.csv.bz2"
+ where year is substituted by /code{"year"}
+}
+\examples{
 \dontrun{
  make_filename(2013)   returns accident_2013.csv.bz2
  make_filename(2014)   returns accident_2014.csv.bz2

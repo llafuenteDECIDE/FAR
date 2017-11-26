@@ -1,18 +1,18 @@
 #' fars_read function
 #' read a csv file given a route to the file.
 #'
-#'  @param filename an string indicating the complete route or relative route (from the working directory) to the file. The file can be compressed.
+#' @param filename an string indicating the complete route or relative route (from the working directory) to the file. The file can be compressed.
 #'
-#'  @return  a table_df that contents the data of csv. If the file doesn?t exist returns an error.
+#' @return  a table_df that contents the data of csv. If the file doesn?t exist returns an error.
 #'
-#'  @importFrom readr read_csv
-#'  @importFrom dplyr tbl_df
+#' @importFrom readr read_csv
+#' @importFrom dplyr tbl_df
 #'
-#'  @examples
+#' @examples
 #' fars_read (accident_2013.csv.bz2) supposing accident_2013.csv.bz2 in the working directory
 #' fars_read (/data/accident_2014.csv.bz2) supposing accident_2014.csv.bz2 in a data folder inside the working directory
 #'
-#'  @export
+#' @export
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
@@ -26,11 +26,11 @@ fars_read <- function(filename) {
 #'  given a year, makes the complete name of the "accident" filename. It has the form "accident_year.csv.bz2"
 #'  where year is substituted by /code{"year"}
 #'
-#'  @param year an integer or string indicating the year to which we want to obtain the filename
+#' @param year an integer or string indicating the year to which we want to obtain the filename
 #'
-#'  @return  an string that represents the complete name of the filename.
+#' @return  an string that represents the complete name of the filename.
 #'
-#'  @examples
+#' @examples
 #' \dontrun{
 #'  make_filename(2013)   returns accident_2013.csv.bz2
 #'  make_filename(2014)   returns accident_2014.csv.bz2
