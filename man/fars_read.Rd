@@ -19,6 +19,6 @@ read a csv file given a route to the file.
 }
 \examples{
 fars_read (accident_2013.csv.bz2)
-fars_read (/data/accident_2014.csv.bz2)
+fars_read (accident_2014.csv.bz2)
 
 }
