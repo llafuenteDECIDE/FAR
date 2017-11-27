@@ -16,6 +16,37 @@ knitr::opts_chunk$set(
 )
 ```
 
-This package is a tool for analyzing data from accidents that happens on years 2013, 2014 or 2015.  It gives an easy way to know the situation of the accidents of one of this years for each state of the USA.
+This package is a tool for analyze and visualize US National Highway Traffic Safety Administration's Fatality Analysis Reporting System data over the years 2013-2015.  It gives an easy way to know the situation of the accidents of one of this years for each state of the USA.
 
-The two main functions in the far package are `far_maps_state` which drows the coordinates of all accidents for a determined year and state, and ``fars_summarize_years`which indicates the number of accidents by month for a determined year.
+## Data description
+This package will be using data from FARS. FARS is a nationwide census providing NHTSA, Congress and the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes
+
+##Functions
+The two main functions in the far package are: 
+
+```far_maps_state``` which drows the coordinates of all accidents for a determined year and state 
+
+```
+fars_map_state(1, 2013)
+```
+
+```fars_summarize_years``` which indicates the number of accidents by month for a determined year.Its argument is a verctor with the years you want to read
+```
+fars_summarize_years(2013:2014)
+```
+Other useful function is ```fars_read``` that  reads in a single file for the specific year. You have to provide the path to the location of the FARS data in your computer.
+
+```
+data<-fars_read(path_to_fars_data)
+
+```
+
+```fars_read_years``` can have multiple years to read. Its argument is a verctor with the years you want to read
+
+```
+fars_read_years(c("2013", "2014"))
+```
+
+##Instalation
+
+To install the package, use ```install_github``` function from the devtools package.
