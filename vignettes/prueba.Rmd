@@ -21,7 +21,7 @@ This package is a tool for analyze and visualize US National Highway Traffic Saf
 ## Data description
 This package will be using data from FARS. FARS is a nationwide census providing NHTSA, Congress and the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes
 
-##Functions
+## Functions
 The two main functions in the far package are: 
 
 ```far_maps_state``` which drows the coordinates of all accidents for a determined year and state 
@@ -47,6 +47,6 @@ data<-fars_read(path_to_fars_data)
 fars_read_years(c("2013", "2014"))
 ```
 
-##Instalation
+## Instalation
 
 To install the package, use ```install_github``` function from the devtools package.
